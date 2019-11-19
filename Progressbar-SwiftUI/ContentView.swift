@@ -16,40 +16,44 @@ struct ContentView: View {
         VStack{
             Loeder(percent:percent)
                 
-                    HStack{
-                        
+                    VStack{
+                       
                         Button(action: {
                             self.percent = 40
                             
                         }) {
-                            Text("40%")
+                            Text("%40")
                         }
+                           .padding(EdgeInsets.init(top: 10, leading: 20, bottom: 0, trailing: 0))
                         Button(action: {
                              self.percent = 60
                         
                         }) {
-                            Text("60%")
+                            Text("%60")
                         }
+                          .padding(EdgeInsets.init(top: 10, leading: 20, bottom: 0, trailing: 0))
                         Button(action: {
                              self.percent = 80
                         
                         }) {
-                            Text("80&")
+                            Text("%80")
                         }
+                            .padding(EdgeInsets.init(top: 10, leading: 20, bottom: 0, trailing: 0))
                         Button(action: {
                              self.percent = 100
                                                
                         }) {
-                            Text("100&")
+                            Text("%100")
                         }
-                        
+                            .padding(EdgeInsets.init(top: 10, leading: 20, bottom: 0, trailing: 0))
                         Button(action: {
                              self.percent = 0
                                                                       
                         }) {
                             Text("sıfırla")
                         }
-                        
+                            .padding(EdgeInsets.init(top: 10, leading: 20, bottom: 0, trailing: 0))
+                   
                  
                     }
                 }
@@ -67,14 +71,15 @@ struct ContentView_Previews: PreviewProvider {
 struct Loeder: View {
     
     var percent : CGFloat = 0
-    var colors : [Color] = [.red,.orange,.yellow,.green,.purple,.red]
+    var colors : [Color] = [.red,.orange,.yellow,.green,.purple,.blue]
     
     var body : some View {
         
         ZStack {
             Circle()
             .fill(Color.white)
-                .frame(width: 100, height: 100)
+                .frame(width: 120, height: 120)
+     
             .overlay (
                 Circle()
                     .trim(from: 0, to: percent * 0.01)
@@ -85,3 +90,7 @@ struct Loeder: View {
         }
     }
 }
+
+
+
+
